@@ -15,7 +15,7 @@ Place all of your prepared v1.72 .vgm files in the ``/input/`` folder, preferabl
 (Outputs to a relative /output/ folder)
 
 ## Caveats
-- Designed specifically with v1.72 .vgm file exports in mind, using [Furnace](https://github.com/tildearrow/furnace).
+- Designed specifically with v1.72 .vgm file exports in mind, using [Furnace](https://github.com/tildearrow/furnace). When exporting, ensure that "Loop song" is left unchecked.
 - For more accurate results, avoid changing the Base Tempo from 640 (256Hz). Feel free to modify Speed, though, including via Fxx in the middle of the SFX.
 - Several FX columns are allowed, at least as far as GB Studio goes.
 - Try to keep your pattern count to 20 rows or lower. Unexpected bugs might occur for longer SFX (untested)
