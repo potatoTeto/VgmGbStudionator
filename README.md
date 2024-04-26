@@ -20,8 +20,8 @@ Place all of your prepared v1.72 .vgm files in the ``/input/`` folder, preferabl
 - Avoid using Stereo Pan anywhere in your SFX: They tend to be buggy!
 
 # Special Thanks
-[Beatscribe](https://github.com/Beatscribe)
-[coffeevalenbat](https://github.com/coffeevalenbat)
+- [Beatscribe](https://github.com/Beatscribe)
+- [coffeevalenbat](https://github.com/coffeevalenbat)
 
 ## License
 
