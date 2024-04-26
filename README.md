@@ -3,6 +3,9 @@
 
 fur2uge is a conversion tool that strips the GB Header from v1.72 .vgm exports exported from a .fur project file. The tool is designed to allow [Furnace](https://github.com/tildearrow/furnace) users to convert their project files to properly-formatted .vgm files, so that they can be exported for homebrew use (including [GB Studio](https://www.gbstudio.dev/)).
 
+# Download
+https://github.com/potatoTeto/furGBVGMHeaderRemover/releases
+
 ## Usage
 ### Casual Usage
 Place all of your prepared v1.72 .vgm files in the ``/input/`` folder, preferably exported using [Furnace](https://github.com/tildearrow/furnace) with a Base Tempo of 640 (256Hz). Ensure that this ``/input/`` folder is located at the same location that the program is. Double-click on ``convert.bat`` to get your converted .vgm files in the /output/ folder.
