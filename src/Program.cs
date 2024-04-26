@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace furGBVGMHeaderRemover
+namespace VgmGbStudionator
 {
     static class Program
     {

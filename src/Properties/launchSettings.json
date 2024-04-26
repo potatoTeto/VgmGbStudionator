@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "furGBVGMHeaderRemover": {
+    "VgmGbStudionator": {
       "commandName": "Project",
       "commandLineArgs": "input/test.vgm"
     }
