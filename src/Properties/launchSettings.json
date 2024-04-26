@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "furGBVGMHeaderRemover": {
+      "commandName": "Project",
+      "commandLineArgs": "input/test.vgm"
+    }
+  }
+}
