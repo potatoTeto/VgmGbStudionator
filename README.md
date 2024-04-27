@@ -1,5 +1,5 @@
 # VgmGbStudionator
-## Strip the GB Header from a v1.72 Furnace .VGM Export for GBDK
+## Removes the "Kill All Channels" header commands from v1.72 Furnace .VGM Exports
 
 VgmGbStudionator is a conversion tool that strips the GB Header from v1.72 .vgm exports exported from a .fur project file. The tool is designed to allow [Furnace](https://github.com/tildearrow/furnace) users to convert their v1.72 ``.vgm`` SFX files to properly-formatted .vgm files, so that they can be exported for homebrew use (including [GB Studio](https://www.gbstudio.dev/)).
 
