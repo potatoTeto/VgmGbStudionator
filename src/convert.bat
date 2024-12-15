@@ -1,6 +1,9 @@
 @echo off
 if not exist input mkdir input
 if not exist output mkdir output
-cd input
-for /R %%f in (*.vgm) do %~dp0/VgmGbStudionator.exe "%%f"
+for /R %%f in (input\*.vgm) do (
+    echo Processing: %%f
+    "%~dp0\VgmGbStudionator.exe" "%%f"
+    echo.
+)
 pause
