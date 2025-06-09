@@ -5,18 +5,38 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="convert.bat">
+    <!-- Always include input files -->
+    <None Include="input\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
-    <None Update="input\test.fur">
+
+    <!-- Always include both scripts -->
+    <None Include="convert.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
-    <None Update="input\test.vgm">
+
+    <None Include="convert.sh">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+
+  <Target Name="RemovePlatformSpecificScripts" AfterTargets="Publish">
+    <!-- Remove Windows .bat script from non-Windows publish outputs -->
+    <Delete Files="$(PublishDir)convert.bat"
+            Condition="'$(RuntimeIdentifier)' != 'win-x64' AND Exists('$(PublishDir)convert.bat')" />
+
+    <!-- Remove .sh script from Windows publish outputs -->
+    <Delete Files="$(PublishDir)convert.sh"
+            Condition="'$(RuntimeIdentifier)' == 'win-x64' AND Exists('$(PublishDir)convert.sh')" />
+  </Target>
+
 
 </Project>

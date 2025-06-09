@@ -38,14 +38,13 @@ namespace VgmGbStudionator
                     // Decode the major version from the second byte
                     int decodedMajor = (int)((version >> 8) & 0xFF);  // Extract the second byte for major version
 
-                    // Display the version properly
                     Console.WriteLine($"VGM Version: {decodedMajor}.{decodedMinorBCD}");
 
                     // Handle version-specific logic
                     if (decodedMajor < 1 || (decodedMajor == 1 && decodedMinorBCD < 72))
                     {
-                        Console.WriteLine($"Unsupported VGM version: {decodedMajor}.{decodedMinorBCD}");
-                        return;
+                        Console.WriteLine($"WARNING: VGM version {decodedMajor}.{decodedMinorBCD} is below the recommended v1.72.");
+                        Console.WriteLine("Conversion will continue, but results may be unreliable due to possible structural differences.");
                     }
 
                     // Step 4: Read the header size

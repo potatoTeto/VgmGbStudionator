@@ -19,7 +19,7 @@ Place all of your prepared v1.72 .vgm files in the ``/input/`` folder, preferabl
 - For more accurate results, avoid changing the Base Tempo from 640 (256Hz). Feel free to modify Speed, though, including via Fxx in the middle of the SFX.
 - Several FX columns are allowed, at least as far as GB Studio goes.
 - Try to keep your pattern count to 20 rows or lower. Unexpected bugs might occur for longer SFX (untested)
-- If your SFX is designed for GBDK (including GB Studio), put an FF99 at the row you want the sound to end on
+- If your SFX is designed for GBDK (including GB Studio), put an FFxx (e.g. FF00) at the row you want the sound to end on
 - Avoid using Stereo Pan anywhere in your SFX: They tend to be buggy!
 
 # Special Thanks
