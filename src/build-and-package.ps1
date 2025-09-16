@@ -36,10 +36,25 @@ foreach ($rid in $targets.Keys) {
 
     # Clean any leftovers from previous runs
     Remove-Item -Recurse -Force $publishTemp, $VgmGbStudionatorFolder -ErrorAction SilentlyContinue
-
+    
     # Publish to temp folder
     dotnet publish -c Release -r $rid --self-contained true -p:PublishSingleFile=true -o $publishTemp
-
+    
+    # Always remove any existing scripts so we don't bundle both
+    Remove-Item "$publishTemp/convert.bat" -ErrorAction SilentlyContinue
+    Remove-Item "$publishTemp/convert.sh" -ErrorAction SilentlyContinue
+    
+    # Copy the correct convert script
+    if ($rid -like "win-*") {
+        Copy-Item "convert.bat" $publishTemp -Force
+    }
+    elseif ($rid -like "linux-*") {
+        Copy-Item "convert.sh" $publishTemp -Force
+    }
+    elseif ($rid -like "osx-*") {
+        Copy-Item "convert.sh" $publishTemp -Force
+    }
+    
     # Rename publish-temp folder to VgmGbStudionator (the folder that will be archived)
     Rename-Item -Path $publishTemp -NewName "VgmGbStudionator"
 
